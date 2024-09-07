@@ -8,7 +8,7 @@
     state: stopped
 
 - name: Update ClamAV DB manually
-  ansible.builtin.cmd:
+  ansible.builtin.command:
     cmd: freshclam
 
 - name: Stop ClamAV service
