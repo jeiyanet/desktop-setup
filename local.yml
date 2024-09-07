@@ -2,6 +2,7 @@
   hosts: localhost
   connection: local
   become: true
+  tags: default
   roles:
     - role: default
 
