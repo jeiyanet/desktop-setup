@@ -1,0 +1,18 @@
+- name: Install ClamAV Packages
+  ansible.builtin.apt:
+    name: "{{ clamav }}"
+
+- name: Stop ClamAV service
+  ansible.builtin.systemd_service:
+    name: clamav-freshclam
+    state: stopped
+
+- name: Update ClamAV DB manually
+  ansible.builtin.cmd:
+    cmd: freshclam
+
+- name: Stop ClamAV service
+  ansible.builtin.systemd_service:
+    name: clamav-daemon.service
+    state: started
+    enabled: true

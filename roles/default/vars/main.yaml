@@ -1,0 +1,79 @@
+package_install:
+  - nala
+  - tmux
+  - neovim
+  - unattended-upgrades
+  - btop
+  - git
+  - curl
+  - pipx
+  - rsync
+  - shellcheck
+  - bibata-cursor-theme
+  - papirus-icon-theme
+  - celluloid
+  - trash-cli
+  - fonts-roboto
+  - piper
+  - fping
+  - uxplay
+  - imagemagick
+  - gparted
+  - nmap
+  - psensor
+  - adb
+  - ttf-mscorefonts-installer
+  - easytag
+  - f3
+  - handbrake
+  - gnome-shell-extension-gsconnect
+
+package_remove:
+  - libreoffice-gtk3
+  - libreoffice-base-core
+  - libreoffice-core
+  - libreoffice-common
+  - gnome-chess
+  - gnome-sudoku
+  - gnome-contacts
+  - gnome-2048
+  - five-or-more
+  - hitori
+  - gnome-klotski
+  - lightsoff
+  - gnome-mahjongg
+  - quadrapassel
+  - gnome-nibbles
+  - swell-foop
+  - evolution
+  - tali
+  - gnome-taquin
+  - gnome-tetravex
+  - gnome-robots
+  - aisleriot
+  - four-in-a-row
+  - gnome-mines
+  - iagno
+  - totem
+
+clamav:
+  - clamav
+  - clamav-daemon
+  - clamtk
+
+docker:
+  - docker.io
+  - docker-compose
+
+firewall:
+  - firewalld
+  - firewall-config
+
+qemu:
+  - qemu-utils
+  - qemu-system-x86
+  - libvirt-daemon-system
+  - virt-manager
+  - virt-viewer
+
+superuser: jeiya

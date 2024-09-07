@@ -1,0 +1,29 @@
+- name: Enable non-free repositories
+  include_tasks: repo.yaml
+
+- name: Disable Root
+  include_tasks: root_disable.yaml
+
+- name: Configure ram usage
+  include_tasks: ram.yaml
+
+- name: Update and configure packages
+  include_tasks: packages.yaml
+
+- name: Install and enable Docker
+  include_tasks: docker.yaml
+
+- name: Install and enable Firewalld
+  include_tasks: firewall.yaml
+
+- name: Install and enable QEMU-KVM
+  include_tasks:  qemu.yaml
+
+- name: Install and enable ClamAV
+  include_tasks: clam.yaml
+
+- name: Install and enable Flatpak
+  include_tasks: flatpak.yaml
+
+- name: Configure grub
+  include_tasks: grub.yaml

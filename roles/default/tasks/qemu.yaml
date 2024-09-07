@@ -1,0 +1,9 @@
+- name: Install QEMU and KVM
+  ansible.builtin.apt:
+    name: "{{ qemu }}"
+
+- name: Add superuser user to libvirt group
+  ansible.builtin.user:
+    name: "{{ superuser }}"
+    groups: "libvirt"
+    append: yes

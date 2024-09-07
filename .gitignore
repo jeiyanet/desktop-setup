@@ -1,0 +1,4 @@
+log
+vault.yaml
+.ssh/
+deploy/preseed.cfg

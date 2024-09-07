@@ -1,0 +1,24 @@
+- name: Do tasks that require root
+  hosts: localhost
+  connection: local
+  become: true
+  roles:
+  - default
+
+# - name: Do tasks that require root
+#   hosts: localhost
+#   connection: local
+#   become: true
+#   roles:
+#   - desktop
+#   vars_files:
+#     - vault.yaml
+
+# - name: Do tasks that require root
+#   hosts: localhost
+#   connection: local
+#   become: true
+#   roles:
+#   - laptop
+#   vars_files:
+#     - vault.yaml
