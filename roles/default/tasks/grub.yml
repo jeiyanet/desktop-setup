@@ -13,8 +13,8 @@
 - name: Set grub_disable_os_prober to true
   ansible.builtin.lineinfile:
     path: /etc/default/grub
-    regexp: "#GRUB_GFXMODE=640x480"
-    line: "GRUB_GFXMODE=1920x1080"
+    regexp: "#GRUB_DISABLE_OS_PROBER=false"
+    line: "GRUB_DISABLE_OS_PROBER=true"
 
 - name: Reload grub
   ansible.builtin.command:
