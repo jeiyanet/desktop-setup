@@ -1,0 +1,19 @@
+{
+    "editor.fontFamily": "'RobotoMono Nerd Font', 'monospace', monospace",
+    "workbench.sideBar.location": "right",
+    "vim.useSystemClipboard": true,
+    "window.zoomLevel": 1,
+    "emmet.includeLanguages": {
+        "astro": "html"
+    },
+    "files.autoSave": "afterDelay",
+    "tailwindCSS.includeLanguages": {
+        "astro": "html"
+    },
+    "editor.lineNumbers": "relative",
+    "explorer.confirmDragAndDrop": false,
+    "telemetry.telemetryLevel": "off",
+    "terminal.integrated.sendKeybindingsToShell": true,
+    "go.toolsManagement.autoUpdate": true,
+    "window.restoreWindows": "none",
+}
