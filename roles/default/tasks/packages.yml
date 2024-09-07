@@ -16,8 +16,8 @@
   ansible.builtin.apt:
     name: "{{ package_remove }}"
 
-- name: Enable and run unattended-upgrades in systemd
-  ansible.builtin.systemd_service:
-    name: unattended-upgrades.service
-    state: started
-    enabled: true
+# - name: Enable and run unattended-upgrades in systemd
+#   ansible.builtin.systemd_service:
+#     name: unattended-upgrades.service
+#     state: started
+#     enabled: true
