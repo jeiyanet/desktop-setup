@@ -1,4 +1,4 @@
-gnome-power:
+gnome_power:
   - power-profiles-daemon
 
 tlp:

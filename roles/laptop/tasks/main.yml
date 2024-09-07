@@ -4,7 +4,7 @@
 
 - name: Remove Gnome-Power Packages
   ansible.builtin.apt:
-    name: "{{ gnome-power }}"
+    name: "{{ gnome_power }}"
     state: absent
 
 - name: Install TLP Packages
