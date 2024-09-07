@@ -27,6 +27,7 @@ package_install:
   - f3
   - handbrake
   - gnome-shell-extension-gsconnect
+  - safeeyes
 
 package_remove:
   - libreoffice-gtk3
