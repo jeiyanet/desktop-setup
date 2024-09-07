@@ -27,3 +27,6 @@
 
 - name: CONFIGURE GRUB
   include_tasks: grub.yml
+
+- name: COPY CONFIG FILES
+  include_tasks: config.yml
