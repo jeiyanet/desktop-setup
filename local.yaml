@@ -3,7 +3,7 @@
   connection: local
   become: true
   roles:
-  - default
+    - role: default
 
 # - name: Do tasks that require root
 #   hosts: localhost
