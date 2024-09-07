@@ -1,29 +1,29 @@
-- name: Enable non-free repositories
+- name: ENABLE NON-FREE REPOSITORIES
   include_tasks: repo.yml
 
-- name: Disable Root
+- name: DISABLE ROOT
   include_tasks: root_disable.yml
 
-- name: Configure ram usage
+- name: CONFIGURE RAM USAGE
   include_tasks: ram.yml
 
-- name: Update and configure packages
+- name: UPDATE AND CONFIGURE PACKAGES
   include_tasks: packages.yml
 
-- name: Install and enable Docker
+- name: INSTALL AND ENABLE DOCKER
   include_tasks: docker.yml
 
-- name: Install and enable Firewalld
+- name: INSTALL AND ENABLE FIREWALLD
   include_tasks: firewall.yml
 
-- name: Install and enable QEMU-KVM
+- name: INSTALL AND ENABLE QEMU-KVM
   include_tasks:  qemu.yml
 
-- name: Install and enable ClamAV
+- name: INSTALL AND ENABLE CLAMAV
   include_tasks: clam.yml
 
-- name: Install and enable Flatpak
+- name: INSTALL AND ENABLE FLATPAK
   include_tasks: flatpak.yml
 
-- name: Configure grub
+- name: CONFIGURE GRUB
   include_tasks: grub.yml
