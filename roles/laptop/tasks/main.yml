@@ -1,0 +1,27 @@
+- name: Update apt cache
+  ansible.builtin.apt:
+    update_cache: true
+
+- name: Remove Gnome-Power Packages
+  ansible.builtin.apt:
+    name: "{{ gnome-power }}"
+    state: absent
+
+- name: Install TLP Packages
+  ansible.builtin.apt:
+    name: "{{ tlp }}"
+
+- name: Copy tlp configuration file
+  ansible.builtin.copy:
+    src: files/tlp.conf
+    dest: "/etc/tlp.conf"
+    owner: "root"
+    group: "root"
+    mode: "644"
+    backup: true
+
+- name: Enable and run tlp in systemd
+  ansible.builtin.systemd_service:
+    name: tlp.service
+    state: started
+    enabled: true

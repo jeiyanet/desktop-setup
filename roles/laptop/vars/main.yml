@@ -1,0 +1,7 @@
+gnome-power:
+  - power-profiles-daemon
+
+tlp:
+  - tlp
+  - powertop
+  - tlp-rdw
