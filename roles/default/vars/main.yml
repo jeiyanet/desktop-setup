@@ -28,6 +28,9 @@ package_install:
   - handbrake
   - gnome-shell-extension-gsconnect
   - safeeyes
+  - tree
+  - pdfkt
+  - img2pdf
 
 package_remove:
   - libreoffice-gtk3
