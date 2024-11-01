@@ -16,6 +16,12 @@
     regexp: "#GRUB_DISABLE_OS_PROBER=false"
     line: "GRUB_DISABLE_OS_PROBER=true"
 
+- name: Set lockdown mode to integrity
+  ansible.builtin.lineinfile:
+    path: /etc/default/grub
+    regexp: "GRUB_CMDLINE_LINUX=\"\""
+    line: "GRUB_CMDLINE_LINUX=\"lockdown=integrity\""
+
 - name: Reload grub
   ansible.builtin.command:
     cmd: grub-mkconfig -o /boot/grub/grub.cfg
