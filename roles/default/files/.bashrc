@@ -63,7 +63,8 @@ if [ "$color_prompt" = yes ]; then
   export host=35
   export dir=30
   export prompt=31
-    PS1='\[\e[1;${green}m\]┌─\[\e[1;${green}m\][\[\e[1;${user}m\]\u\[\e[1;${green}m\]]\[\e[1;${green}m\]\[\e[1;${green}m\]─\[\e[1;${green}m\][\[\e[1;${host}m\]\h\[\e[1;${green}m\]\[\e[1;${green}m\]] \e[1;${dir}m\]\w\n\[\e[1;${green}m\]└──\[\e[1;${green}m\][\[\e[1;${prompt}m\]\$\[\e[1;${green}m\]]\[\e[0m\] '
+  export white=97
+    PS1='\[\e[1;${green}m\]┌─\[\e[1;${green}m\][\[\e[1;${user}m\]\u\[\e[1;${green}m\]]\[\e[1;${green}m\]\[\e[1;${green}m\]─\[\e[1;${green}m\][\[\e[1;${host}m\]\h\[\e[1;${green}m\]\[\e[1;${green}m\]]\[\e[1;${white}m\] \T \e[1;${dir}m\]\w\n\[\e[1;${green}m\]└──\[\e[1;${green}m\][\[\e[1;${prompt}m\]\$\[\e[1;${green}m\]]\[\e[0m\] '
 #    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;94m\]\u\[\033[38;5;206m\]@\[\033[1;32m\]\h\[\033[00m\] \[\033[90m\]\w\[\033[1;32m\]
 #󰥭\[\033[0m\] '
 else
@@ -129,6 +130,7 @@ alias img="cd \$HOME/Pictures/"
 alias vid="cd \$HOME/Videos/"
 alias msc="cd \$HOME/Music/"
 alias gitre="cd \$HOME/Documents/gitrepo/"
+alias td="cd \$HOME/mount/storage/test/"
 
 # typos
 alias nivm="nvim"
@@ -136,6 +138,7 @@ alias trsah="trash"
 alias vi="nvim"
 alias namp="nmap"
 alias clera="clear"
+alias rm="trash"
 
 # ls
 alias lh="ls -alFh --hyperlink"
@@ -147,10 +150,9 @@ alias dir="ls -ld --color=auto --format=vertical */ .*/"
 
 # general
 alias edu="firefox -P edu & exit"
-alias test="cd \$HOME/mount/storage/test"
 alias echo="echo -n"
 alias nmapp="nmap -p- --min-rate 5000 -sV"
-alias todo="nvim \$HOME/Documents/TODO"
+alias todo="nvim $HOME/Documents/TODO"
 alias nano="nano -DEFLSilT4"
 alias grup-update="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias shuffle1="ls -1 --hyperlink *.png |  shuf | head -1"
@@ -239,6 +241,9 @@ alias gor="go run"
 alias gob="go build ."
 alias got="go test -v -cover"
 alias goben="go test -bench=."
+
+# temp
+alias mcpe="echo 'kK*%gLVTr47H\$ZJgh8KTpXH^xSvayH54yRVib!osFz@yHv^8Txec&dsdo9QFp5\$z'"
 
 export PATH=$PATH:$HOME/.local/bin
 export PATH="$HOME/go/bin:$PATH"
@@ -350,6 +355,7 @@ esp() {
 gadl() {
   correct="$HOME/mount/storage/archive/media/gallery-dl/2/"
   linkdir="$HOME/mount/storage/archive/media/"
+  #correct="/media/jeiya/a2891e6a-9f11-475c-8044-1cf16a503b50/storage/archive/media"
 
   nvim "$linkdir"/links.txt
   mapfile -t valid_links < <(grep -v ^\# "$linkdir/links.txt" | grep https)
@@ -381,6 +387,25 @@ makemusic() {
     eyeD3 --add-image "$a":FRONT_COVER "$final";
   done
 }
+
+music() {
+  echo "input music links:"
+  read -ra music
+  echo "music are: ${music[*]}"
+  dirorg="$HOME/Music/editing/original/"
+  mp3="yt-dlp --embed-thumbnail --no-mtime --extract-audio --audio-format mp3 --audio-quality 0 --paths $dirorg"
+  $mp3 "${music[@]}"
+
+  for i in "$dirorg"*.mp3; do
+    # Detect the silence/no-audio that has a volume of 1 at the beginning of the file
+    # Reverse the audio
+    # Redo the silence detection but this time, at the end of the file
+    # Reverse the audio back to its original order
+    sox "$i" "${i%.mp3}-processed.mp3" silence 1 0.1 1% reverse silence 1 0.1 1% reverse
+    trash "$i"
+  done
+}
+
 
 grupdate() {
 #    # Check if fsck options are present in the configuration
@@ -420,12 +445,12 @@ vt() {
   export run="\e[1;32m"
   export task="\e[1;31m"
   export white="\033[0m"
-  echo -e "Running ${task}FILE${run}"
+  echo -e "Running ${task}FILE ${run}"
   file "$1"
-  echo -e "${white}Running ${task}CLAMAV${run}"
+  echo -e "${white}Running ${task}CLAMAV ${run}"
   scand "$1"
   scan "$1"
-  echo -e "${white}Running ${task}OKTETA${run}"
+  echo -e "${white}Running ${task}OKTETA ${run}"
   flatpak run --file-forwarding org.kde.okteta @@ "$1" @@
   echo -e ${white}
 }
@@ -437,7 +462,6 @@ gobuild() {
   read -r OS
   GOARCH=$arch GOOS=$OS go build .
 }
-
 gosecret() {
   printf "Your Variable \n ~> "
   read -r value 
