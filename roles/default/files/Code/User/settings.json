@@ -6,7 +6,6 @@
     "emmet.includeLanguages": {
         "astro": "html"
     },
-    "files.autoSave": "afterDelay",
     "tailwindCSS.includeLanguages": {
         "astro": "html"
     },
@@ -16,4 +15,5 @@
     "terminal.integrated.sendKeybindingsToShell": true,
     "go.toolsManagement.autoUpdate": true,
     "window.restoreWindows": "none",
+    "files.autoSave": "afterDelay"
 }
