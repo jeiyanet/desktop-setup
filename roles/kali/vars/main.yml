@@ -27,6 +27,8 @@ package_install:
   - libreoffice
   - cyberchef
   - openjdk-21-jdk
+  - ghidra
+  - gdb
 
 package_remove:
 
