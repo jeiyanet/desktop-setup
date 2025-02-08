@@ -18,7 +18,7 @@ package_install:
   - audacity
   - tree
   - pdftk
-  - image2pdf
+  - img2pdf
   - gobuster
   - feroxbuster
   - seclists
