@@ -10,7 +10,7 @@ This is intended for:
 In your Kali box, run this command in the terminal:
 
 ```bash
-wget "https://blog.aniagtech.com/bootstrap.sh" && \
+wget "https://raw.githubusercontent.com/jeiyanet/desktop-setup/refs/heads/main/deploy/bootstrap.sh" && \
 chmod +x bootstrap.sh
 ```
 
