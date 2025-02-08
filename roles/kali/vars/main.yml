@@ -1,4 +1,5 @@
 package_install:
+  - nala
   - wget
   - tmux
   - neovim
@@ -13,7 +14,6 @@ package_install:
   - gparted
   - nmap
   - ttf-mscorefonts-installer
-  - tldr
   - handbrake
   - audacity
   - tree
