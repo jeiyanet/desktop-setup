@@ -31,7 +31,6 @@ package_install:
   - tree
   - pdfkt
   - img2pdf
-  - tree
 
 package_remove:
   - libreoffice-gtk3
