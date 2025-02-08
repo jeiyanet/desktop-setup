@@ -1,5 +1,4 @@
 package_install:
-  - nala
   - wget
   - tmux
   - neovim

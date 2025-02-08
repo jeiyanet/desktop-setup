@@ -42,5 +42,10 @@ pipx install gallery-dl
 pipx install tldr
 pipx install yt-dlp
 
-sudo nala fetch
-sudo nala update
+distro=$(cat /etc/os-release | grep "^ID=" | cut -d'=' -f2)
+
+if [ "$distro" != "kali" ]; then
+  sudo nala fetch
+  sudo nala update
+fi
+
