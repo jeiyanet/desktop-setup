@@ -129,7 +129,7 @@ alias dow="cd \$HOME/Downloads/"
 alias img="cd \$HOME/Pictures/"
 alias vid="cd \$HOME/Videos/"
 alias msc="cd \$HOME/Music/"
-alias gitre="cd \$HOME/Documents/gitrepo/"
+alias gitre="cd \$HOME/mount/gitrepo/gitrepo/"
 alias td="cd \$HOME/mount/storage/test/"
 
 # typos
@@ -153,7 +153,7 @@ alias edu="firefox -P edu & exit"
 alias echo="echo -n"
 alias nmapp="nmap -p- --min-rate 5000 -sV"
 alias todo="nvim $HOME/Documents/TODO"
-alias nano="nano -DEFLSilT4"
+alias nano="nano -ZDEFLSil%0T4"
 alias grup-update="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias shuffle1="ls -1 --hyperlink *.png |  shuf | head -1"
 alias shuffle10="ls -1 --hyperlink *.png |  shuf -n 10"
@@ -220,7 +220,7 @@ alias vault="ansible-vault view --vault-password-file \$HOME/.vault_key \$HOME/D
 #alias zsr="zypper search"
 
 # nala
-alias update="sudo nala upgrade && flatpak update && pipx upgrade-all && tldr -u && sudo freshclam && exit"
+alias update="sudo nala upgrade && flatpak update && pipx upgrade-all && tldr -u && sudo freshclam && docker system prune && exit"
 alias nrm="sudo nala autopurge && sudo nala clean"
 alias nin="sudo nala install"
 alias npg="sudo nala purge"
@@ -251,6 +251,7 @@ export PATH=$PATH:/usr/local/go/bin
 alias today=$"date +'%Y_%m_%d'"
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:"$HOME/.local/bin/ideaIU-2024.3.1.1/idea-IU-243.22562.218/bin"
 
 # highlight special files
 export LS_COLORS="$LS_COLORS:\
@@ -269,7 +270,7 @@ cht() {
 }
 
 dly() {
-  echo "input video links:"
+  echo "input video links: "
   read -ra videos
   echo "videos are: ${videos[*]}"
   mp4="yt-dlp --embed-subs --no-mtime -o '%(id)s_%(uploader_id)s_%(upload_date)s_%(title)s_(%(duration)ss)_[%(resolution)s]' --merge-output-format mp4 --embed-thumbnail --path $HOME/mount/storage/archive/media/videos"
@@ -364,7 +365,7 @@ gadl() {
 }
 
 makemusic() {
-  echo "input music links:"
+  echo "input music links: "
   read -ra music
   echo "music are: ${music[*]}"
   echo "what language: jp, eng, kpop"
@@ -389,10 +390,10 @@ makemusic() {
 }
 
 music() {
-  echo "input music links:"
+  echo "input music links: "
   read -ra music
   echo "music are: ${music[*]}"
-  dirorg="$HOME/Music/editing/original/"
+  dirorg="$HOME/Music/editing/"
   mp3="yt-dlp --embed-thumbnail --no-mtime --extract-audio --audio-format mp3 --audio-quality 0 --paths $dirorg"
   $mp3 "${music[@]}"
 
@@ -403,6 +404,11 @@ music() {
     # Reverse the audio back to its original order
     sox "$i" "${i%.mp3}-processed.mp3" silence 1 0.1 1% reverse silence 1 0.1 1% reverse
     trash "$i"
+  done
+
+  for a in "$dirorg"*.webp; do 
+    final="$dirorg$(basename "${a%.*}.mp3")";
+    eyeD3 --add-image "$a":FRONT_COVER "$final";
   done
 }
 
