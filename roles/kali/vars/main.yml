@@ -1,0 +1,42 @@
+package_install:
+  - wget
+  - tmux
+  - neovim
+  - unattended-upgrades
+  - btop
+  - git
+  - curl
+  - pipx
+  - rsync
+  - trash-cli
+  - imagemagick
+  - gparted
+  - nmap
+  - ttf-mscorefonts-installer
+  - tldr
+  - handbrake
+  - audacity
+  - tree
+  - pdftk
+  - image2pdf
+  - gobuster
+  - feroxbuster
+  - seclists
+  - ewf-tools
+  - gimp
+  - libreoffice
+  - cyberchef
+  - openjdk-21-jdk
+
+package_remove:
+
+firewall:
+  - firewalld
+  - firewall-config
+
+clamav:
+  - clamav
+  - clamav-daemon
+  - clamtk
+
+superuser: jeiya

@@ -12,4 +12,12 @@
   become: true
   tags: laptop
   roles:
-  - role: laptop
+    - role: laptop
+
+- name: Do tasks for a kali vm
+  hosts: localhost
+  connection: local
+  become: true
+  tags: kali
+  roles:
+    - role: kali

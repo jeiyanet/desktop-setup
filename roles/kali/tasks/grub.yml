@@ -1,0 +1,27 @@
+- name: Set grub_timeout to 0
+  ansible.builtin.lineinfile:
+    path: /etc/default/grub
+    regexp: "GRUB_TIMEOUT=5"
+    line: "GRUB_TIMEOUT=0"
+
+- name: Set grub_gfxmode to 1920x1080
+  ansible.builtin.lineinfile:
+    path: /etc/default/grub
+    regexp: "#GRUB_GFXMODE=640x480"
+    line: "GRUB_GFXMODE=1920x1080"
+
+- name: Set grub_disable_os_prober to true
+  ansible.builtin.lineinfile:
+    path: /etc/default/grub
+    regexp: "#GRUB_DISABLE_OS_PROBER=false"
+    line: "GRUB_DISABLE_OS_PROBER=true"
+
+- name: Set lockdown mode to integrity
+  ansible.builtin.lineinfile:
+    path: /etc/default/grub
+    regexp: "GRUB_CMDLINE_LINUX=\"\""
+    line: "GRUB_CMDLINE_LINUX=\"lockdown=integrity\""
+
+- name: Reload grub
+  ansible.builtin.command:
+    cmd: grub-mkconfig -o /boot/grub/grub.cfg
