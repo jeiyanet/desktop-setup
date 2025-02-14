@@ -29,7 +29,7 @@ package_install:
   - gnome-shell-extension-gsconnect
   - safeeyes
   - tree
-  - pdfkt
+  - pdftk
   - img2pdf
 
 package_remove:

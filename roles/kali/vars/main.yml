@@ -28,6 +28,7 @@ package_install:
   - openjdk-21-jdk
   - ghidra
   - gdb
+  - zbar-tools
 
 package_remove:
 
