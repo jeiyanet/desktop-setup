@@ -41,4 +41,4 @@ clamav:
   - clamav-daemon
   - clamtk
 
-superuser: jeiya
+superuser: "{{ ansible_user }}"
