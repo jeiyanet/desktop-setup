@@ -32,34 +32,16 @@ package_install:
   - pdftk
   - img2pdf
   - figlet
+  - zip
 
 package_remove:
   - libreoffice-gtk3
   - libreoffice-base-core
   - libreoffice-core
   - libreoffice-common
-  - gnome-chess
-  - gnome-sudoku
   - gnome-contacts
-  - gnome-2048
-  - five-or-more
-  - hitori
-  - gnome-klotski
-  - lightsoff
-  - gnome-mahjongg
-  - quadrapassel
-  - gnome-nibbles
-  - swell-foop
-  - evolution
-  - tali
-  - gnome-taquin
-  - gnome-tetravex
-  - gnome-robots
-  - aisleriot
-  - four-in-a-row
-  - gnome-mines
-  - iagno
   - totem
+  - malcontent
 
 clamav:
   - clamav
