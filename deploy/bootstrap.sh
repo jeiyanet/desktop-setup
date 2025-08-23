@@ -31,8 +31,12 @@ if [ "$kaliYes" = "y" ]; then
   tags+="$kaliRole"
 fi
 
-sudo ansible-pull -U https://github.com/jeiyanet/desktop-setup.git --tags "$tags"
+read -r -p "Enter your user: " osUser
+sed --in-place "s/jeiya/$osUser/g" ./roles/kali/vars/main.yml
 
+git clone https://github.com/jeiyanet/desktop-setup.git
+
+sudo ansible-pull -U file://$PWD/desktop-setup --tags "$tags"
 
 flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
