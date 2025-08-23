@@ -28,6 +28,12 @@ package_install:
   - ghidra
   - gdb
   - zbar-tools
+  - ncat
+  - firmware-atheros
+  - stepic
+  - steghide
+  - outguess
+  - tcpflow
 
 package_remove:
 

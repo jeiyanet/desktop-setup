@@ -26,6 +26,9 @@ package_install:
   - easytag
   - f3
   - handbrake
+  - gnome-shell-extensions
+  - gnome-shell-extensions-manager
+  - gnoem-shell-extensions-launch-new-instance
   - gnome-shell-extension-gsconnect
   - safeeyes
   - tree
@@ -33,6 +36,9 @@ package_install:
   - img2pdf
   - figlet
   - zip
+  - fastfetch
+  - chromium
+  - transmission
 
 package_remove:
   - libreoffice-gtk3
