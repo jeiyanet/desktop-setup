@@ -2,14 +2,14 @@
 
 This is intended for:
 
-- Debian 12 with Gnome.
-- Kali Linux 2024.4
+- Debian 13 with Gnome.
+- Kali Linux 2025.2
 
 # Installation
 
 > Make sure you are on ethernet
 
-In your Kali box, run this command in the terminal:
+In your linux box, run this command in the terminal:
 
 ```bash
 wget "https://raw.githubusercontent.com/jeiyanet/desktop-setup/refs/heads/main/deploy/bootstrap.sh" && \
