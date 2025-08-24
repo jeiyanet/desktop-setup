@@ -45,7 +45,10 @@ pipx install gallery-dl
 pipx install tldr
 pipx install yt-dlp
 
-sudo gem install zsteg
+
+if [ "$kaliYes" = "y" ]; then
+    sudo gem install zsteg
+fi
 
 distro=$(cat /etc/os-release | grep "^ID=" | cut -d'=' -f2)
 
