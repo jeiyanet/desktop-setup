@@ -42,12 +42,3 @@
     group: "{{ superuser }}"
     mode: "755"
     backup: true
-
-- name: Copy configuration file
-  ansible.builtin.copy:
-    src: files/safeeyes
-    dest: "/home/{{ superuser }}/.config"
-    owner: "{{ superuser }}"
-    group: "{{ superuser }}"
-    mode: "755"
-    backup: true
