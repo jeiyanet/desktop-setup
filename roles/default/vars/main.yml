@@ -27,8 +27,8 @@ package_install:
   - f3
   - handbrake
   - gnome-shell-extensions
-  - gnome-shell-extensions-manager
-  - gnoem-shell-extensions-launch-new-instance
+  - gnome-shell-extension-manager
+  - gnoem-shell-extension-launch-new-instance
   - gnome-shell-extension-gsconnect
   - safeeyes
   - tree
