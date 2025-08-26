@@ -31,6 +31,8 @@ package_install:
   - gnome-shell-extension-launch-new-instance
   - gnome-shell-extension-gsconnect
   - workrave
+  - workrave-gnome
+  - workrave-gnome-flashback
   - tree
   - pdftk
   - img2pdf
