@@ -3,7 +3,7 @@
 This is intended for:
 
 - Debian 13 with Gnome.
-- Kali Linux 2025.2
+- Kali Linux 2025.2 with Gnome.
 
 # Installation
 
