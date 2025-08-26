@@ -34,6 +34,8 @@ package_install:
   - steghide
   - outguess
   - tcpflow
+  - gnome-shell-extension-workspace-indicator
+  - lz4
 
 package_remove:
 
