@@ -36,6 +36,24 @@ package_install:
   - tcpflow
   - gnome-shell-extension-workspace-indicator
   - lz4
+  - file
+  - netcat-traditional
+  - strings
+  - binwalk
+  - foremost
+  - exiftool
+  - zip
+  - unzip
+  - bzip2
+  - xz-utils
+  - lzip
+  - liblzo2-2
+  - liblzma5
+  - hydra
+  - john
+  - binutils
+  - openssh-client
+
 
 package_remove:
 

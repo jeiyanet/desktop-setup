@@ -29,10 +29,6 @@ package_install:
   - gnome-shell-extensions
   - gnome-shell-extension-manager
   - gnome-shell-extension-launch-new-instance
-  - gnome-shell-extension-gsconnect
-  - workrave
-  - workrave-gnome
-  - workrave-gnome-flashback
   - tree
   - pdftk
   - img2pdf
@@ -41,6 +37,7 @@ package_install:
   - fastfetch
   - chromium
   - transmission
+  - ssh-askpass
 
 package_remove:
   - libreoffice-gtk3
