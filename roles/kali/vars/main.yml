@@ -53,7 +53,8 @@ package_install:
   - john
   - binutils
   - openssh-client
-
+  - readpe
+  - audacity
 
 package_remove:
 
