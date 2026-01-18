@@ -7,13 +7,7 @@
   pre_tasks:
     - name: Ansible-pull warning notice
       debug:
-        msg: |
-          =========================================
-          IMPORTANT:
-          The warning "Could not match supplied host pattern"
-          is expected when using ansible-pull.
-          You can safely ignore it.
-          =========================================
+        msg: "You can safely ignore the warnings above as that is expected behavior of ansible pull"
 
   roles:
     - role: default
@@ -27,13 +21,7 @@
   pre_tasks:
     - name: Ansible-pull warning notice
       debug:
-        msg: |
-          =========================================
-          IMPORTANT:
-          The warning "Could not match supplied host pattern"
-          is expected when using ansible-pull.
-          You can safely ignore it.
-          =========================================
+        msg: "You can safely ignore the warnings above as that is expected behavior of ansible pull"
 
   roles:
     - role: laptop
@@ -47,13 +35,7 @@
   pre_tasks:
     - name: Ansible-pull warning notice
       debug:
-        msg: |
-          =========================================
-          IMPORTANT:
-          The warning "Could not match supplied host pattern"
-          is expected when using ansible-pull.
-          You can safely ignore it.
-          =========================================
+        msg: "You can safely ignore the warnings above as that is expected behavior of ansible pull"
 
   roles:
     - role: kali
