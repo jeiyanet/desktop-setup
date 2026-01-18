@@ -32,9 +32,6 @@ if [ "$kaliYes" = "y" ]; then
 fi
 
 git clone https://github.com/jeiyanet/desktop-setup.git
-read -r -p "Enter your user: " osUser
-sed --in-place "s/jeiya/$osUser/g" ./desktop-setup/roles/kali/vars/main.yml
-
 sudo ansible-pull -U file://$PWD/desktop-setup --tags "$tags"
 
 pipx install ansible-lint
