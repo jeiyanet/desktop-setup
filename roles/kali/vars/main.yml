@@ -46,7 +46,6 @@ package_install:
   - gdb
   - gdb-doc
   - gdb-multiarch
-  - angr
   - radare2
   - valgrind
   - strace
@@ -112,6 +111,7 @@ pip_packages:
   - scapy
   - requests
   - flask
+  - angr
 
 venv_path: "/home/{{ ansible_env.SUDO_USER }}/venv"
 
