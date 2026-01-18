@@ -1,35 +1,9 @@
-- name: Copy bin configuration files
-  ansible.builtin.copy:
-    src: files/bin
-    dest: "/home/{{ superuser }}/.local"
-    owner: "{{ superuser }}"
-    group: "{{ superuser }}"
-    mode: "700"
-    backup: true
-
-- name: Copy btop configuration file
-  ansible.builtin.copy:
-    src: files/btop
-    dest: "/home/{{ superuser }}/.config"
-    owner: "{{ superuser }}"
-    group: "{{ superuser }}"
-    mode: "755"
-    backup: true
-
-- name: Copy VSCode configuration file
-  ansible.builtin.copy:
-    src: files/Code
-    dest: "/home/{{ superuser }}/.config"
-    owner: "{{ superuser }}"
-    group: "{{ superuser }}"
-    mode: "700"
-    backup: true
-
 - name: Copy neovim configuration file
   ansible.builtin.copy:
     src: files/nvim
-    dest: "/home/{{ superuser }}/.config"
-    owner: "{{ superuser }}"
-    group: "{{ superuser }}"
+    dest: "/home/{{ ansible_env.SUDO_USER }}/.config"
+    owner: "{{ ansible_env.SUDO_USER }}"
+    group: "{{ ansible_env.SUDO_USER }}"
     mode: "755"
     backup: true
+

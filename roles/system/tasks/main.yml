@@ -1,0 +1,20 @@
+- name: UPDATE PACKAGES
+  include_tasks: packages.yml
+
+- name: CONFIGURE GRUB
+  include_tasks: grub.yml
+
+- name: CONFIGURE RAM USAGE
+  include_tasks: ram.yml
+
+- name: INSTALL AND ENABLE CLAMAV
+  include_tasks: clam.yml
+
+- name: INSTALL AND ENABLE DOCKER
+  include_tasks: docker.yml
+
+- name: INSTALL AND ENABLE FIREWALLD
+  include_tasks: firewall.yml
+
+- name: INSTALL AND ENABLE FLATHUB
+  include_tasks: flatpak.yml

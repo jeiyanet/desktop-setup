@@ -1,23 +1,37 @@
-- name: Update apt cache
-  ansible.builtin.apt:
-    update_cache: true
-
-- name: Perform dist-upgrade
-  ansible.builtin.apt:
-    upgrade: dist
-    dpkg_options: "force-confold,force-confdef"
-
 - name: Install Packages
   ansible.builtin.apt:
     name: "{{ package_install }}"
+  become: true
 
 - name: Remove Packages
   ansible.builtin.apt:
     name: "{{ package_remove }}"
     state: absent
+  become: true
 
 - name: Enable and run unattended-upgrades in systemd
   ansible.builtin.systemd_service:
     name: unattended-upgrades.service
     state: started
     enabled: true
+  become: true
+
+- name: Install Ruby Gems
+  ansible.general.gem:
+    name: zsteg
+    state: present
+
+- name: Download pwndbg .deb package
+  ansible.builtin.get_url:
+    url: https://github.com/pwndbg/pwndbg/releases/download/2025.10.20/pwndbg_2025.10.20_amd64.deb
+    dest: /tmp/pwndbg_2025.10.20_amd64.deb
+    mode: '0644'
+
+- name: Install pwndbg package
+  ansible.builtin.apt:
+    deb: /tmp/pwndbg_2025.10.20_amd64.deb
+    state: present
+
+- name: Install "RsaCracker" Rust package
+  community.general.cargo:
+    name: rsacracker

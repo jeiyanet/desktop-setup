@@ -1,77 +1,79 @@
 package_install:
-  - wget
+  - nala
   - tmux
   - neovim
   - unattended-upgrades
+  - htop
   - btop
   - git
   - curl
   - pipx
   - rsync
+  - shellcheck
+  - bibata-cursor-theme
+  - papirus-icon-theme
+  - celluloid
   - trash-cli
+  - fonts-roboto
+  - piper
+  - fping
+  - uxplay
   - imagemagick
   - gparted
   - nmap
+  - psensor
+  - adb
   - ttf-mscorefonts-installer
-  - audacity
+  - easytag
+  - f3
+  - gnome-shell-extensions
+  - gnome-shell-extension-manager
+  - gnome-shell-extension-launch-new-instance
   - tree
   - pdftk
-  - gobuster
-  - feroxbuster
-  - seclists
-  - ewf-tools
-  - gimp
-  - libreoffice
-  - cyberchef
-  - openjdk-21-jdk
-  - ghidra
-  - gdb
-  - zbar-tools
-  - ncat
-  - firmware-atheros
-  - stepic
-  - steghide
-  - tcpflow
-  - gnome-shell-extension-workspace-indicator
-  - lz4
-  - file
-  - netcat-traditional
-  - binwalk
-  - foremost
-  - exiftool
+  - img2pdf
+  - figlet
   - zip
-  - unzip
-  - bzip2
-  - xz-utils
-  - lzip
-  - liblzo2-2
-  - liblzma5
-  - hydra
-  - binutils
-  - openssh-client
-  - readpe
-  - build-essential
-  - python3
-  - python3-venv
-  - python3-pip
-  - python3-dev
-  - cmake
-  - pkg-config
-  - libssl-dev
-  - libffi-dev
-  - libtool
-  - automake
-  - autoconf
-  - default-jre
   - fastfetch
+  - chromium
+  - transmission
+  - ssh-askpass
+  - python3
+  - python3-pip
+  - python3-venv
+  - build-essential
+  - python3-dev
+  - gdb
+  - gdb-doc
+  - gdb-multiarch
+  - angr
+  - radare2
+  - valgrind
+  - strace
+  - ltrace
+  - ghidra
+  - jadx
+  - nasm
+  - patchelf
+  - forensics-all
+  - forensics-extra
+  - steghide
+  - steghide-doc
+  - stegseek
+  - pngcheck
+  - foremost
+  - ffmpeg
+  - fcrackzip
+  - audacity
+  - sonic-visualiser
+  - ruby
+  - ruby-dev
   - wireshark
   - tcpdump
-  - htop
   - netcat-openbsd
   - socat
   - rlwrap
   - hexedit
-  - p7zip-full
   - john
   - john-data
   - hashcat
@@ -79,40 +81,57 @@ package_install:
   - openssl
   - sqlmap
   - nikto
+  - feroxbuster
+  - gobuster
+  - ffuf
   - dirb
   - wafw00f
   - whatweb
+  - hydra
   - httpie
   - burpsuite
   - zaproxy
-  - pngcheck
-  - ffmpeg
-  - fcrackzip
-  - sonic-visualiser
-  - libjpeg-dev
-  - ruby
-  - ruby-dev
-  - libc6-dbg
-  - qemu-user
-  - qemu-system
-  - patchelf
-  - nasm
-  - gdb-multiarch
-  - radare2
-  - valgrind
-  - strace
-  - ltrace
-  - jadx
+  - cargo
+  - pkg-config
+  - libssl-dev
 
 package_remove:
+  - libreoffice-gtk3
+  - libreoffice-base-core
+  - libreoffice-core
+  - libreoffice-common
+  - gnome-contacts
+  - totem
+  - malcontent
 
-firewall:
-  - firewalld
-  - firewall-config
+pip_packages:
+  - pwntools
+  - pycryptodome
+  - numpy
+  - sympy
+  - scapy
+  - requests
+  - flask
 
-clamav:
-  - clamav
-  - clamav-daemon
-  - clamtk
+venv_path: "/home/{{ ansible_env.SUDO_USER }}/venv"
 
-superuser: jeiya
+system_flatpaks:
+  - com.dec05eba.gpu_screen_recorder
+  - com.obsproject.Studio
+  - com.github.tchx84.Flatseal
+
+user_flatpaks:
+  - com.bitwarden.desktop
+  - com.brave.Browser
+  - com.github.marktext.marktext
+  - com.github.tenderowl.frog
+  - com.jetpackduba.Gitnuro
+  - com.jgraph.drawio.desktop
+  - com.zettlr.Zettlr
+  - dev.lasheen.qr
+  - org.gimp.GIMP
+  - org.gimp.GIMP.HEIC
+  - org.gnome.design.Contrast
+  - org.localsend.localsend_app
+  - org.onlyoffice.desktopeditors
+  - xyz.xclicker.xclicker

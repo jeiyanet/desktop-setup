@@ -1,0 +1,3 @@
+- name: Install QEMU and KVM
+  ansible.builtin.apt:
+    name: "{{ qemu }}"

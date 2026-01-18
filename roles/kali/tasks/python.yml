@@ -1,0 +1,15 @@
+- name: Create virtual environment
+  ansible.builtin.command: python3 -m venv {{ venv_path }}
+  args:
+    creates: "{{ venv_path }}"
+
+- name: Upgrade pip inside venv
+  ansible.builtin.pip:
+    name: pip
+    state: latest
+    virtualenv: "{{ venv_path }}"
+
+- name: Install Python packages inside venv
+  ansible.builtin.pip:
+    name: "{{ pip_packages }}"
+    virtualenv: "{{ venv_path }}"

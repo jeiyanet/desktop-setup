@@ -3,7 +3,8 @@
     name: zram-tools
 
 - name: Change swappiness value to 10
-  ansible.builtin.lineinfile:
-    path: /etc/sysctl.conf
-    line: vm.swappiness = 10
-    create: yes
+  ansible.builtin.sysctl:
+    name: vm.swappiness
+    value: "10"
+    state: present
+    reload: yes

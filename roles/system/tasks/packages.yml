@@ -1,0 +1,9 @@
+- name: Update apt cache
+  ansible.builtin.apt:
+    update_cache: true
+
+- name: Perform dist-upgrade
+  ansible.builtin.apt:
+    upgrade: dist
+    dpkg_options: "force-confold,force-confdef"
+

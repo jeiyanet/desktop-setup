@@ -16,3 +16,8 @@
     name: firewalld.service
     state: started
     enabled: true
+
+- name: Restart docker.socket in systemd
+  ansible.builtin.systemd_service:
+    name: docker.socket
+    state: restarted

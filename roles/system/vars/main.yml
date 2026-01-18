@@ -1,0 +1,19 @@
+clamav:
+  - clamav
+  - clamav-daemon
+  - clamtk
+
+docker:
+  - docker.io
+  - docker-compose
+
+firewall:
+  - firewalld
+  - firewall-config
+
+qemu:
+  - qemu-utils
+  - qemu-system-x86
+  - libvirt-daemon-system
+  - virt-manager
+  - virt-viewer

@@ -1,5 +1,0 @@
-- name: Disable root account
-  ansible.builtin.lineinfile:
-    path: /etc/passwd
-    regexp: "root:x:0:0:root:/root:/usr/bin/zsh"
-    line: "root:x:0:0:root:/root:/sbin/nologin"

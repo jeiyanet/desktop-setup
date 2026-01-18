@@ -12,6 +12,34 @@
   roles:
     - role: default
 
+- name: Do tasks for a base system
+  hosts: localhost
+  connection: local
+  become: true
+  tags: system
+
+  pre_tasks:
+    - name: Ansible-pull warning notice
+      debug:
+        msg: "You can safely ignore the warnings above as that is expected behavior of ansible pull"
+
+  roles:
+    - role: system
+
+- name: Do tasks for a kali system
+  hosts: localhost
+  connection: local
+  become: true
+  tags: kali
+
+  pre_tasks:
+    - name: Ansible-pull warning notice
+      debug:
+        msg: "You can safely ignore the warnings above as that is expected behavior of ansible pull"
+
+  roles:
+    - role: kali
+
 - name: Do tasks for a laptop
   hosts: localhost
   connection: local
@@ -26,16 +54,3 @@
   roles:
     - role: laptop
 
-- name: Do tasks for a kali vm
-  hosts: localhost
-  connection: local
-  become: true
-  tags: kali
-
-  pre_tasks:
-    - name: Ansible-pull warning notice
-      debug:
-        msg: "You can safely ignore the warnings above as that is expected behavior of ansible pull"
-
-  roles:
-    - role: kali
