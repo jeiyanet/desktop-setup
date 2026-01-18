@@ -50,11 +50,62 @@ package_install:
   - liblzo2-2
   - liblzma5
   - hydra
-  - john
   - binutils
   - openssh-client
   - readpe
-  - audacity
+  - build-essential
+  - python3
+  - python3-venv
+  - python3-pip
+  - python3-dev
+  - cmake
+  - pkg-config
+  - libssl-dev
+  - libffi-dev
+  - libtool
+  - automake
+  - autoconf
+  - default-jre
+  - fastfetch
+  - wireshark
+  - tcpdump
+  - htop
+  - netcat-openbsd
+  - socat
+  - rlwrap
+  - hexedit
+  - p7zip-full
+  - john
+  - john-data
+  - hashcat
+  - xxd
+  - openssl
+  - sqlmap
+  - nikto
+  - dirb
+  - wafw00f
+  - whatweb
+  - httpie
+  - burpsuite
+  - zaproxy
+  - pngcheck
+  - ffmpeg
+  - fcrackzip
+  - sonic-visualiser
+  - libjpeg-dev
+  - ruby
+  - ruby-dev
+  - libc6-dbg
+  - qemu-user
+  - qemu-system
+  - patchelf
+  - nasm
+  - gdb-multiarch
+  - radare2
+  - valgrind
+  - strace
+  - ltrace
+  - jadx
 
 package_remove:
 
