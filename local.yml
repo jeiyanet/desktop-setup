@@ -23,6 +23,18 @@
   connection: local
   become: true
   tags: laptop
+
+  pre_tasks:
+    - name: Ansible-pull warning notice
+      debug:
+        msg: |
+          =========================================
+          IMPORTANT:
+          The warning "Could not match supplied host pattern"
+          is expected when using ansible-pull.
+          You can safely ignore it.
+          =========================================
+
   roles:
     - role: laptop
 
@@ -31,5 +43,17 @@
   connection: local
   become: true
   tags: kali
+
+  pre_tasks:
+    - name: Ansible-pull warning notice
+      debug:
+        msg: |
+          =========================================
+          IMPORTANT:
+          The warning "Could not match supplied host pattern"
+          is expected when using ansible-pull.
+          You can safely ignore it.
+          =========================================
+
   roles:
     - role: kali
