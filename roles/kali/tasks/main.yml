@@ -1,11 +1,11 @@
-# - name: INSTALL PACKAGES
-#   include_tasks: packages.yml
-# 
-# - name: INSTALL ROOT FLATPAKS
-#   include_tasks: flatpak.yml
-# 
-# - name: INSTALL USER FLATPAKS
-#   include_tasks: flatpak.yml
+- name: INSTALL PACKAGES
+  include_tasks: packages.yml
+
+- name: INSTALL ROOT FLATPAKS
+  include_tasks: flatpak.yml
+
+- name: INSTALL USER FLATPAKS
+  include_tasks: flatpak.yml
 
 - name: SETUP PYTHON ENV
   include_tasks: python.yml
