@@ -9,7 +9,7 @@ sudo apt update
 sudo apt dist-upgrade -y
 sudo apt install -y ansible-core git
 
-tags=""
+tags="system"
 read -r -p "Use default role? (y/n): " defaultYes2
 if [ "$defaultYes2" = "y" ]; then
   defaultRole="default"
@@ -37,18 +37,12 @@ sed --in-place "s/jeiya/$osUser/g" ./desktop-setup/roles/kali/vars/main.yml
 
 sudo ansible-pull -U file://$PWD/desktop-setup --tags "$tags"
 
-flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-
 pipx install ansible-lint
 pipx install eyed3
 pipx install gallery-dl
 pipx install tldr
 pipx install yt-dlp
 
-
-if [ "$kaliYes" = "y" ]; then
-    sudo gem install zsteg
-fi
 
 distro=$(cat /etc/os-release | grep "^ID=" | cut -d'=' -f2)
 
