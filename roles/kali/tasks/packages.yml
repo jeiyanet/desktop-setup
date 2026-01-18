@@ -17,7 +17,7 @@
   become: true
 
 - name: Install Ruby Gems
-  ansible.general.gem:
+  community.general.gem:
     name: zsteg
     state: present
 
