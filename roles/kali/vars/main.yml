@@ -31,7 +31,6 @@ package_install:
   - firmware-atheros
   - stepic
   - steghide
-  - outguess
   - tcpflow
   - gnome-shell-extension-workspace-indicator
   - lz4
