@@ -13,7 +13,6 @@ package_install:
   - gparted
   - nmap
   - ttf-mscorefonts-installer
-  - handbrake
   - audacity
   - tree
   - pdftk
