@@ -36,7 +36,6 @@ package_install:
   - lz4
   - file
   - netcat-traditional
-  - strings
   - binwalk
   - foremost
   - exiftool
