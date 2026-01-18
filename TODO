@@ -1,6 +1,5 @@
-- [ ] Add config for desktop environment
 - [ ] Fix user password in preseed
-- [ ] Add flatpak installs
 - [ ] windows
 - [ ] flare-vm
 - [ ] firefox ublock origin
+- [ ] Debian setup REVAMP
