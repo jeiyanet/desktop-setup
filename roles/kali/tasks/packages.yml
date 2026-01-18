@@ -35,3 +35,4 @@
 - name: Install "RsaCracker" Rust package
   community.general.cargo:
     name: rsacracker
+  become_user: "{{ ansible_env.SUDO_USER }}"
