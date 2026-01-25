@@ -67,3 +67,31 @@ qemu:
   - libvirt-daemon-system
   - virt-manager
   - virt-viewer
+
+system_flatpaks:
+  - com.dec05eba.gpu_screen_recorder
+  - com.obsproject.Studio
+  - com.github.tchx84.Flatseal
+
+user_flatpaks:
+  - com.bitwarden.desktop
+  - com.brave.Browser
+  - com.github.marktext.marktext
+  - com.github.tenderowl.frog
+  - com.jetpackduba.Gitnuro
+  - com.jgraph.drawio.desktop
+  - com.zettlr.Zettlr
+  - dev.lasheen.qr
+  - org.gimp.GIMP
+  - org.gimp.GIMP.HEIC
+  - org.gnome.design.Contrast
+  - org.localsend.localsend_app
+  - org.onlyoffice.desktopeditors
+  - xyz.xclicker.xclicker
+  - org.prismlauncher.PrismLauncher
+  - page.codeberg.JakobDev.jdMacroPlayer
+  - com.valvesoftware.Steam
+  - org.mozilla.Thunderbird
+  - org.kde.kdenlive
+  - dev.vencord.Vesktop
+  - fr.handbrake.ghb
