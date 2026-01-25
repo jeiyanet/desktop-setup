@@ -34,17 +34,9 @@ fi
 git clone https://github.com/jeiyanet/desktop-setup.git
 sudo ansible-pull -U file://$PWD/desktop-setup --tags "$tags"
 
-pipx install ansible-lint
-pipx install eyed3
-pipx install gallery-dl
-pipx install tldr
-pipx install yt-dlp
-
-
 distro=$(cat /etc/os-release | grep "^ID=" | cut -d'=' -f2)
 
 if [ "$distro" != "kali" ]; then
   sudo nala fetch
   sudo nala update
 fi
-

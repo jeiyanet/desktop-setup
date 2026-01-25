@@ -95,3 +95,10 @@ user_flatpaks:
   - org.kde.kdenlive
   - dev.vencord.Vesktop
   - fr.handbrake.ghb
+
+pipx_packages:
+  - ansible-lint
+  - eyed3
+  - gallery-dl
+  - tldr
+  - yt-dlp

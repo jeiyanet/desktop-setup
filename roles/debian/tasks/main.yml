@@ -10,5 +10,8 @@
 - name: INSTALL FLATPAK APPS
   include_tasks: flatpak.yml
 
+- name: INSTALL PIPX PACKAGES
+  include_tasks: pipx.yml
+
 - name: COPY CONFIG FILES
   include_tasks: config.yml
