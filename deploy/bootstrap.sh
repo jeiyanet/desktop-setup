@@ -10,11 +10,11 @@ sudo apt dist-upgrade -y
 sudo apt install -y ansible-core git
 
 tags="system"
-read -r -p "Use default role? (y/n): " defaultYes2
-if [ "$defaultYes2" = "y" ]; then
-  defaultRole="default"
+read -r -p "Use debian role? (y/n): " debianYes
+if [ "$debianYes" = "y" ]; then
+  debianRole="debian"
   [ -n "$tags" ] && tags+=","
-  tags+="$defaultRole"
+  tags+="$debianRole"
 fi
 
 read -r -p "Use laptop role? (y/n): " laptopYes
