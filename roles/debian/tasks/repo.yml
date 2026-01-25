@@ -33,3 +33,7 @@
     path: /etc/apt/sources.list
     regexp: "deb-src http://deb.debian.org/debian/ trixie-updates main non-free-firmware"
     line: "deb-src http://deb.debian.org/debian/ trixie-updates main non-free-firmware contrib non-free"
+
+- name: Update apt cache
+  ansible.builtin.apt:
+    update_cache: true
