@@ -128,3 +128,4 @@ map('n', '<leader>!', 'i#!/usr/bin/env bash<ESC>')
 
 -- Quick exit with saving with QQ
 map('n', 'QQ', ':q!<CR>')
+

@@ -1,0 +1,35 @@
+- name: Copy bashrc configuration file
+  ansible.builtin.copy:
+    src: files/.bashrc
+    dest: "/home/{{ ansible_env.SUDO_USER }}/.bashrc"
+    owner: "{{ ansible_env.SUDO_USER }}"
+    group: "{{ ansible_env.SUDO_USER }}"
+    mode: "644"
+    backup: true
+
+- name: Copy btop configuration file
+  ansible.builtin.copy:
+    src: files/btop
+    dest: "/home/{{ ansible_env.SUDO_USER }}/.config/"
+    owner: "{{ ansible_env.SUDO_USER }}"
+    group: "{{ ansible_env.SUDO_USER }}"
+    mode: "755"
+    backup: true
+
+- name: Copy VSCode configuration file
+  ansible.builtin.copy:
+    src: files/Code
+    dest: "/home/{{ ansible_env.SUDO_USER }}/.config/"
+    owner: "{{ ansible_env.SUDO_USER }}"
+    group: "{{ ansible_env.SUDO_USER }}"
+    mode: "700"
+    backup: true
+
+- name: Copy neovim configuration file
+  ansible.builtin.copy:
+    src: files/nvim
+    dest: "/home/{{ ansible_env.SUDO_USER }}/.config/"
+    owner: "{{ ansible_env.SUDO_USER }}"
+    group: "{{ ansible_env.SUDO_USER }}"
+    mode: "755"
+    backup: true

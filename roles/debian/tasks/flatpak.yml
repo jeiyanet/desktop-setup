@@ -1,0 +1,15 @@
+- name: Install system flatpaks
+  community.general.flatpak:
+    name: "{{ item }}"
+    state: present
+    method: system
+  become: true
+  loop: "{{ system_flatpaks }}"
+
+- name: Install user flatpaks
+  community.general.flatpak:
+    name: "{{ item }}"
+    state: present
+    method: user
+    remote: flathub
+  loop: "{{ user_flatpaks }}"

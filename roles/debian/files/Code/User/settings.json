@@ -15,5 +15,6 @@
     "terminal.integrated.sendKeybindingsToShell": true,
     "go.toolsManagement.autoUpdate": true,
     "window.restoreWindows": "none",
-    "files.autoSave": "afterDelay"
+    "files.autoSave": "afterDelay",
+    "workbench.preferredHighContrastColorTheme": "Default Dark Modern"
 }

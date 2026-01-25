@@ -67,5 +67,3 @@ qemu:
   - libvirt-daemon-system
   - virt-manager
   - virt-viewer
-
-superuser: jeiya

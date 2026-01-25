@@ -129,15 +129,17 @@ alias dow="cd \$HOME/Downloads/"
 alias img="cd \$HOME/Pictures/"
 alias vid="cd \$HOME/Videos/"
 alias msc="cd \$HOME/Music/"
-alias gitre="cd \$HOME/mount/gitrepo/gitrepo/"
-alias td="cd \$HOME/mount/storage/test/"
+alias gitre="cd /home/mount/storage/gitrepo/"
+alias td="cd /home/mount/storage/test/"
 
 # typos
+alias cler="clear"
 alias nivm="nvim"
 alias trsah="trash"
 alias vi="nvim"
 alias namp="nmap"
 alias clera="clear"
+alias c="cd"
 alias rm="trash"
 
 # ls
@@ -162,6 +164,7 @@ alias rd="rm -vrfI --one-file-system"
 alias md="mkdir -pv"
 alias smd="sudo mkdir -pv"
 alias cp="cp -vrip"
+alias portchk="nc -zv"
 alias mv="mv -vi"
 alias ping="ping -c 3"
 alias mp4="yt-dlp --no-mtime -o '%(id)s_%(uploader_id)s_%(upload_date)s_%(title)s_(%(duration)ss)_[%(resolution)s]' --merge-output-format mp4 --embed-thumbnail"
@@ -190,6 +193,9 @@ alias neofetch="neofetch --ascii \$HOME/.config/neofetch/debian"
 alias mkpass="openssl rand -base64"
 alias mpv="mpv --hwdec=vaapi"
 alias dd="dd bs=4M"
+alias dconfS="dconf dump / > dconf-settings.ini"
+alias dconfL="dconf load / < dconf-settings.ini"
+alias copy="rsync -avh --progress --delete"
 
 # git
 alias gst="git status"
@@ -256,6 +262,7 @@ export PATH=$PATH:"$HOME/.local/bin/ideaIU-2024.3.1.1/idea-IU-243.22562.218/bin"
 # highlight special files
 export LS_COLORS="$LS_COLORS:\
 *.yaml=01;35:\
+*.yml=01;35:\
 *.conf=00;32:\
 *TODO=01;32:\
 *.md=01;30:\
@@ -326,13 +333,6 @@ temp() {
 
 tips() {
   cat "$HOME/Documents/tips/$1"
-}
-
-gacp() {
-  git add -A
-  read -rp "Git Commit: " gitcom
-  git commit -am "$gitcom"
-  git push
 }
 
 ard() {
@@ -473,3 +473,17 @@ gosecret() {
   read -r value 
   export secret=$value
 }
+
+gitman() {
+  git status
+  echo "Input your files: "
+  read -ra files
+  git add ${files[*]}
+  echo "Commit Message: "
+  read -r comm
+  git commit -m $comm
+  git push
+}
+
+alias mcpass="echo -e 'AItw0WKV7Wv2IHqAIwFojN8FVYi3dFh30R0DkRHOKXW4ljn8\n'"
+alias compile="gcc main.c -g -o elf && ./elf"

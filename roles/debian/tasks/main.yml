@@ -1,0 +1,14 @@
+- name: DISABLE ROOT ACCOUNT
+  include_tasks: root_disable.yml
+
+- name: ENABLE NON-FREE REPOS
+  include_tasks: repo.yml
+
+- name: INSTALL PACKAGES
+  include_tasks: packages.yml
+
+- name: INSTALL FLATPAK APPS
+  include_tasks: flatpak.yml
+
+- name: COPY CONFIG FILES
+  include_tasks: config.yml
