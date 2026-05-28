@@ -64,7 +64,6 @@ package_install:
   - ffmpeg
   - fcrackzip
   - audacity
-  - sonic-visualiser
   - ruby
   - ruby-dev
   - wireshark
