@@ -1,8 +1,13 @@
+- name: Load distro-specific vars
+  ansible.builtin.include_vars: "{{ ansible_os_family }}.yml"
+
+# rest of includes unchanged...
 - name: UPDATE PACKAGES
   include_tasks: packages.yml
 
 - name: CONFIGURE GRUB
   include_tasks: grub.yml
+  when: ansible_os_family == "Debian"
 
 - name: CONFIGURE RAM USAGE
   include_tasks: ram.yml

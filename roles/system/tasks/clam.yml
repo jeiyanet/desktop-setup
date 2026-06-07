@@ -1,5 +1,5 @@
 - name: Install ClamAV Packages
-  ansible.builtin.apt:
+  ansible.builtin.package:
     name: "{{ clamav }}"
 
 - name: Stop ClamAV service

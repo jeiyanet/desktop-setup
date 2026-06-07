@@ -5,16 +5,32 @@ if [[ "${time}" == "n" ]]; then
   exit 1
 fi
 
-sudo apt update
-sudo apt dist-upgrade -y
-sudo apt install -y ansible-core git
+distro=$(cat /etc/os-release | grep "^ID=" | cut -d'=' -f2)
+
+if [ "$distro" != "opensuse-tumbleweed"]; then
+  sudo apt update
+  sudo apt dist-upgrade -y
+  sudo apt install -y ansible-core git
+else
+  sudo zypper refresh
+  sudo zypper update
+  sudo zypper install -y ansible git
+fi
 
 tags="system"
+
 read -r -p "Use debian role? (y/n): " debianYes
 if [ "$debianYes" = "y" ]; then
   debianRole="debian"
   [ -n "$tags" ] && tags+=","
   tags+="$debianRole"
+fi
+
+read -r -p "Use opensuse role? (y/n): " opensuseYes
+if [ "$opensuseYes" = "y" ]; then
+  opensuseRole="debian"
+  [ -n "$tags" ] && tags+=","
+  tags+="$opensuseRole"
 fi
 
 read -r -p "Use laptop role? (y/n): " laptopYes
@@ -34,9 +50,7 @@ fi
 git clone https://github.com/jeiyanet/desktop-setup.git
 sudo ansible-pull -U file://$PWD/desktop-setup --tags "$tags"
 
-distro=$(cat /etc/os-release | grep "^ID=" | cut -d'=' -f2)
-
-if [ "$distro" != "kali" ]; then
+if [ "$distro" != "kali" && "$distro" != "opensuse-tumbleweed" ]; then
   sudo nala fetch
   sudo nala update
 fi

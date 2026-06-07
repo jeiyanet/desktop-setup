@@ -1,9 +1,17 @@
-- name: Update apt cache
-  ansible.builtin.apt:
-    update_cache: true
+- name: Update package cache and upgrade
+  ansible.builtin.package:
+    name: "*"
+    state: latest
+  when: ansible_os_family == "Debian"
 
-- name: Perform dist-upgrade
+- name: Perform dist-upgrade (Debian)
   ansible.builtin.apt:
     upgrade: dist
     dpkg_options: "force-confold,force-confdef"
+  when: ansible_os_family == "Debian"
 
+- name: Perform zypper dup (openSUSE)
+  community.general.zypper:
+    name: "*"
+    state: dist-upgrade
+  when: ansible_os_family == "Suse"

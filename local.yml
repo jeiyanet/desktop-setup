@@ -53,3 +53,17 @@
 
   roles:
     - role: debian
+
+- name: Do tasks for an opensuse system
+  hosts: localhost
+  connection: local
+  become: true
+  tags: opensuse
+
+  pre_tasks:
+    - name: Ansible-pull warning notice
+      debug:
+        msg: "You can safely ignore the warnings above as that is expected behavior of ansible pull"
+
+  roles:
+    - role: opensuse

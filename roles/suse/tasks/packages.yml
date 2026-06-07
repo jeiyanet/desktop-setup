@@ -1,0 +1,11 @@
+- name: Install Packages
+  community.general.zypper:
+    name: "{{ package_install }}"
+    state: present
+  become: true
+
+- name: Remove Packages
+  community.general.zypper:
+    name: "{{ package_remove }}"
+    state: absent
+  become: true
