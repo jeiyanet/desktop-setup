@@ -92,9 +92,6 @@ package_install:
   - cargo
   - pkg-config
   - libssl-dev
-  - cyberchef
-  - qsstv
-  - pavucontrol
 
 package_remove:
   - libreoffice-gtk3

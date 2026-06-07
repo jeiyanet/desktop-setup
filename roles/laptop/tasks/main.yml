@@ -1,22 +1,22 @@
-- name: Load distro-specific vars
-  ansible.builtin.include_vars: "{{ ansible_os_family }}.yml"
+- name: Update apt cache
+  ansible.builtin.apt:
+    update_cache: true
 
 - name: Remove Gnome-Power Packages
-  ansible.builtin.package:
+  ansible.builtin.apt:
     name: "{{ gnome_power }}"
     state: absent
 
 - name: Install TLP Packages
-  ansible.builtin.package:
+  ansible.builtin.apt:
     name: "{{ tlp }}"
-    state: present
 
 - name: Copy tlp configuration file
   ansible.builtin.copy:
     src: files/tlp.conf
-    dest: /etc/tlp.conf
-    owner: root
-    group: root
+    dest: "/etc/tlp.conf"
+    owner: "root"
+    group: "root"
     mode: "644"
     backup: true
 

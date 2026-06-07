@@ -1,5 +1,5 @@
 - name: Install Firewalld
-  ansible.builtin.package:
+  ansible.builtin.apt:
     name: "{{ firewall }}"
 
 - name: Copy Firewalld Public zone configuration file

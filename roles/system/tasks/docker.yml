@@ -1,3 +1,3 @@
 - name: Install Docker
-  ansible.builtin.package:
+  ansible.builtin.apt:
     name: "{{ docker }}"

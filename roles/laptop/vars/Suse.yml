@@ -1,8 +1,0 @@
-gnome_power:
-  - power-profiles-daemon  # same package name on openSUSE
-
-tlp:
-  - tlp
-  - tlpui
-  - powertop
-  # tlp-rdw is included in the tlp package on openSUSE
