@@ -9,6 +9,8 @@ sudo apt update
 sudo apt dist-upgrade -y
 sudo apt install -y ansible-core git
 
+git clone https://github.com/jeiyanet/desktop-setup.git
+
 tags="system"
 read -r -p "Use debian role? (y/n): " debianYes
 if [ "$debianYes" = "y" ]; then
@@ -31,7 +33,6 @@ if [ "$kaliYes" = "y" ]; then
   tags+="$kaliRole"
 fi
 
-git clone https://github.com/jeiyanet/desktop-setup.git
 sudo ansible-pull -U file://$PWD/desktop-setup --tags "$tags"
 
 distro=$(cat /etc/os-release | grep "^ID=" | cut -d'=' -f2)
