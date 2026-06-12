@@ -29,6 +29,7 @@ package_install:
   - gnome-shell-extensions
   - gnome-shell-extension-manager
   - gnome-shell-extension-launch-new-instance
+  - gnome-shell-extension-appindicator
   - tree
   - pdftk
   - img2pdf
@@ -38,6 +39,7 @@ package_install:
   - chromium
   - transmission
   - ssh-askpass
+  - brasero
 
 package_remove:
   - libreoffice-gtk3
