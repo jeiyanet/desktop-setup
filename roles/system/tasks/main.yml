@@ -16,5 +16,8 @@
 - name: INSTALL AND ENABLE FIREWALLD
   include_tasks: firewall.yml
 
+- name: INSTALL AND ENABLE QEMU KVM
+  include_tasks: qemu.yml
+
 - name: INSTALL AND ENABLE FLATHUB
   include_tasks: flatpak.yml
