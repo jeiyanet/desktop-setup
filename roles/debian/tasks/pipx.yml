@@ -2,4 +2,7 @@
   community.general.pipx:
     name: "{{ item }}"
     state: latest
+    executable: /usr/bin/pipx
+  become: true
+  become_user: "{{ ansible_env.SUDO_USER }}"
   with_items: "{{ pipx_packages }}"
