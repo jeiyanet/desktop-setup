@@ -6,10 +6,21 @@
   become: true
   loop: "{{ system_flatpaks }}"
 
+- name: Ensure Flathub user remote exists for the actual user
+  community.general.flatpak_remote:
+    name: flathub
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+    state: present
+    method: user
+  become: true
+  become_user: "{{ ansible_env.SUDO_USER }}"
+
 - name: Install user flatpaks
   community.general.flatpak:
     name: "{{ item }}"
     state: present
     method: user
     remote: flathub
+  become: true
+  become_user: "{{ ansible_env.SUDO_USER }}"
   loop: "{{ user_flatpaks }}"
