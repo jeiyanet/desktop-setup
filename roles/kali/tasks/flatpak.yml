@@ -13,7 +13,7 @@
     state: present
     method: user
   become: true
-  become_user: "{{ ansible_env.SUDO_USER }}"
+  become_user: "{{ ansible_facts['env']['SUDO_USER'] }}"
 
 - name: Install user flatpaks
   community.general.flatpak:
@@ -22,5 +22,5 @@
     method: user
     remote: flathub
   become: true
-  become_user: "{{ ansible_env.SUDO_USER }}"
+  become_user: "{{ ansible_facts['env']['SUDO_USER'] }}"
   loop: "{{ user_flatpaks }}"
