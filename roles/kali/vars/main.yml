@@ -112,7 +112,7 @@ pip_packages:
   - flask
   - angr
 
-venv_path: "/home/{{ ansible_env.SUDO_USER }}/venv"
+venv_path: "/home/{{ ansible_facts['env']['SUDO_USER'] }}/venv"
 
 system_flatpaks:
   - com.dec05eba.gpu_screen_recorder

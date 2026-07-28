@@ -1,9 +1,9 @@
 - name: Copy neovim configuration file
   ansible.builtin.copy:
     src: files/nvim
-    dest: "/home/{{ ansible_env.SUDO_USER }}/.config"
-    owner: "{{ ansible_env.SUDO_USER }}"
-    group: "{{ ansible_env.SUDO_USER }}"
+    dest: "/home/{{ ansible_facts['env']['SUDO_USER'] }}/.config"
+    owner: "{{ ansible_facts['env']['SUDO_USER'] }}"
+    group: "{{ ansible_facts['env']['SUDO_USER'] }}"
     mode: "755"
     backup: true
 
